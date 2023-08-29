@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
 import ProductService from "../services/ProductService";
-import BasketRepository from "../repositories/BasketRepository";
+import BasketRepository from "../controllers/BasketRepository";
 import BasketHelper from "../helpers/BasketHelper";
 
 export default function Header() {

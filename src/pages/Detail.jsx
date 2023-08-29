@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import DetailRepository from "../repositories/DetailRepository";
+import DetailRepository from "../controllers/DetailRepository";
 
 export default function Detail() {
   const [, updateState] = React.useState();

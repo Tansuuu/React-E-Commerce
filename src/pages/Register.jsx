@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import RegisterRepository from "../repositories/RegisterRepository";
+import RegisterRepository from "../controllers/RegisterRepository";
 import SwalHelper from "../helpers/SwalHelper";
 import Footer from "../components/Footer";
 import Header from "../components/Header";

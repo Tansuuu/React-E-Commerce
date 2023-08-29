@@ -45,8 +45,8 @@
       "name": "sertac",
       "surname": "aköz",
       "id": "WJtwVv3",
-      "money": 3670,
-      "password": "$2a$10$U/V79bxgFOjVBtY/GHXHK.RQNaMOket1TLmFILNlQ9sX5s8q5c6wW"
+      "money": 365,
+      "password": "$2a$10$bqbKZMFbNjoDrtCf4ZZnLedvSAACsSSmsa5G7A4O02mhNbh11tTmK"
     },
     {
       "email": "sertac3@bcodeyazilim.com",
@@ -103,6 +103,14 @@
       "surname": "kim",
       "id": "gsD9vwe",
       "money": 0
+    },
+    {
+      "email": "tansu11@hotmail.com",
+      "password": "$2a$10$W9wjvsW1ZCmzUwVWAt3h9.osvHA.ZVOwzGFFzDdKojLBuoRHPDjge",
+      "name": "taansu",
+      "surname": "teeekin",
+      "money": 0,
+      "id": "Hj5FDYE"
     }
   ],
   "productBaskets": [

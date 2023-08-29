@@ -3,7 +3,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ProductService from "../services/ProductService";
 import { Link } from "react-router-dom";
-import ExampleRepository from "../repositories/ExampleRepository";
+import ExampleRepository from "../controllers/ExampleRepository";
 
 export default function Home() {
   const [data, setData] = useState([]);

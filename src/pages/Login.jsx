@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import LoginRepository from "../repositories/LoginRepository";
+import LoginController from "../controllers/LoginController";
 import SwalHelper from "../helpers/SwalHelper";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { Status } from "../utils/Resource";
 
 export default function Login() {
   const [formData, setFormData] = useState({
@@ -13,20 +14,40 @@ export default function Login() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    const response = await LoginRepository.login(formData);
-    console.log(response);
-    if (response === "Incorrect password") {
-      SwalHelper.cornerPopUp("error", "Parola hatalı");
-    } else if (response === "Cannot find user") {
-      SwalHelper.cornerPopUp("error", "Kayıtlı kullanıcı bulunamadı");
-    } else if (response === "Password is too short") {
-      SwalHelper.cornerPopUp("warning", "Parola en az 4 karakter içermeli");
-    } else if (response === "Email and password are required") {
-      SwalHelper.cornerPopUp("error", "Lütfen email ve parolayı giriniz");
-    } else {
-      SwalHelper.cornerPopUp("success", "Giriş başarılı");
-      window.location = "/";
-    }
+    // const response = await LoginRepository.login(formData);
+    // console.log(response);
+
+    LoginController.login(formData)
+      .then((response) => {
+        console.log("RESOLVE");
+        console.log(response);
+        SwalHelper.cornerPopUp("success", "Giriş başarılı");
+        window.location = "/";
+      })
+      .catch((error) => {
+        console.log("REJECT");
+        SwalHelper.cornerPopUp("error", error.message ?? "ASD");
+      });
+
+    // if (response.status == Status.SUCCESS) {
+    //   SwalHelper.cornerPopUp("success", "Giriş başarılı");
+    //   window.location = "/";
+    // } else {
+    //   SwalHelper.cornerPopUp("error", response.message ?? "ASD");
+    // }
+
+    // if (response === "Incorrect password") {
+    //   SwalHelper.cornerPopUp("error", "Parola hatalı");
+    // } else if (response === "Cannot find user") {
+    //   SwalHelper.cornerPopUp("error", "Kayıtlı kullanıcı bulunamadı");
+    // } else if (response === "Password is too short") {
+    //   SwalHelper.cornerPopUp("warning", "Parola en az 4 karakter içermeli");
+    // } else if (response === "Email and password are required") {
+    //   SwalHelper.cornerPopUp("error", "Lütfen email ve parolayı giriniz");
+    // } else {
+    //   SwalHelper.cornerPopUp("success", "Giriş başarılı");
+    //   // window.location = "/";
+    // }
   }
 
   function handleChange(e) {

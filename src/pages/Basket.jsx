@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import BasketRepository from "../repositories/BasketRepository";
+import BasketRepository from "../controllers/BasketRepository";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import LocalStorageService from "../services/LocalStorageService";

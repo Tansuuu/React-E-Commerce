@@ -3,7 +3,7 @@ import LocalStorageService from "../services/LocalStorageService";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Login from "./Login";
-import UserPageRepository from "../repositories/UserPageRepository";
+import UserPageRepository from "../controllers/UserPageRepository";
 
 export default function UserPage() {
   const user = UserPageRepository.getUser();
