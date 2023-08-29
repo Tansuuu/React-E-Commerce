@@ -3,12 +3,18 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ProductService from "../services/ProductService";
 import { Link } from "react-router-dom";
+import ExampleRepository from "../repositories/ExampleRepository";
 
 export default function Home() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     getDatas();
+    ExampleRepository.getProducts()
+      .then((data) => {})
+      .catch((error) => {});
+
+      ExampleRepository.getGlobals();
   }, []);
 
   async function getDatas() {
