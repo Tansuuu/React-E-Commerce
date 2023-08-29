@@ -1,0 +1,140 @@
+{
+  "users": [
+    {
+      "email": "tansucaglatekin@gmail.com",
+      "password": "$2a$10$d3yh0iAMFnhgACSm2.u.JugZ4K5ZeM1S.lEGNPHFXHvnr/S0gpGpm",
+      "name": "fdsfsfdsfsg",
+      "surname": "dsdsdssfdf",
+      "id": "RVbpTWM",
+      "money": 0
+    },
+    {
+      "email": "tansu_2001@hotmail.com",
+      "password": "$2a$10$QZdXolD9GO31I1E7jBuTEO5aFCdEj6NIN5zkzlZC/yNIyDTDDBHre",
+      "name": "tansu",
+      "surname": "tekin",
+      "id": "iOSDSw4",
+      "money": 0
+    },
+    {
+      "email": "deneme@hotmail.com",
+      "name": "deneme",
+      "surname": "deneme",
+      "id": "RpZfu5O",
+      "money": 5800386,
+      "password": "$2a$10$unSbgYHN5KEfa5TkjrQI/O8uPpCbK82cwZXxldRtmqyhDzbIJQiZu"
+    },
+    {
+      "email": "cagla@hotmail.com",
+      "password": "$2a$10$AZy1rXmG2WllwgSzFWS4Au1ZvVtHwfcH.ywZBOwilxjmGq5b3ZSqq",
+      "name": "cagla",
+      "surname": "tekin",
+      "id": "4zqKo6N",
+      "money": 0
+    },
+    {
+      "email": "tekin@hotmail.com",
+      "password": "$2a$10$E1znAZQBSlERfZ7wNmQGb.2TNWO7kTJhc2snTp8NFacQFMIWmS6DK",
+      "name": "tekin",
+      "surname": "tekin",
+      "id": "i47pcJE",
+      "money": 0
+    },
+    {
+      "email": "sertac@bcodeyazilim.com",
+      "name": "sertac",
+      "surname": "aköz",
+      "id": "WJtwVv3",
+      "money": 3670,
+      "password": "$2a$10$U/V79bxgFOjVBtY/GHXHK.RQNaMOket1TLmFILNlQ9sX5s8q5c6wW"
+    },
+    {
+      "email": "sertac3@bcodeyazilim.com",
+      "password": "$2a$10$ZOgfl1PuvqdMi5lEfRN7nupM5EsAgy5TTBv0KAHz2OzMCODZOvhV.",
+      "name": "Sertaç 3",
+      "surname": "Aköz",
+      "id": "L03jm25",
+      "money": 0
+    },
+    {
+      "email": "asd@asd.com",
+      "password": "$2a$10$hSfBXxN6a/vUMRFxR48kJOy.FdlmQ8qTw1tBbVI3bWEKdvJu3QWw2",
+      "name": "asd",
+      "surname": "asd",
+      "id": "Z68N_JL",
+      "money": 0
+    },
+    {
+      "email": "tcagla@hotmail.com",
+      "password": "$2a$10$IBAbQxwxP57UHAsLyzEr7O4ooeMv9ocdvZTqPTxiZQaBRIldWmyLq",
+      "name": "tcagla",
+      "surname": "tcagla",
+      "id": "6LIXK70",
+      "money": 0
+    },
+    {
+      "email": "fdsfsd@hotmail.com",
+      "password": "$2a$10$yfUk9dA1Pu1wNAq2G6drzueX4Y2nJT0c5DYE1jdLsFb4w4v4wBfKG",
+      "name": "",
+      "surname": "tcagla",
+      "id": "ylO8QCm",
+      "money": 0
+    },
+    {
+      "email": "cagla_@hotmail.com",
+      "password": "$2a$10$eglEp6s5iQ8a4ZM9pCzx5.7CAduhPmCD2Rueuww3.sSmEAhr5OzxG",
+      "name": "caglaaaa",
+      "surname": "caglaaa",
+      "id": "ovy-lcw",
+      "money": 0
+    },
+    {
+      "email": "nesrin@hotmail.com",
+      "password": "$2a$10$r6yZLOfDSN6.NV5rWXhk/..idSIPoTcqpuooOSyi/A4kmZs3vofTC",
+      "name": "nesri",
+      "surname": "nesrin",
+      "id": "eXyDTE0",
+      "money": 0
+    },
+    {
+      "email": "kim@gmail.com",
+      "password": "$2a$10$fMfUzNlhs0.HSRiS0q/dYeUdzc2d65yRBIdqca9QNIjBCC70lXz/u",
+      "name": "kim",
+      "surname": "kim",
+      "id": "gsD9vwe",
+      "money": 0
+    }
+  ],
+  "productBaskets": [
+    {
+      "title": "Mens Cotton Jacket",
+      "price": 55.99,
+      "description": "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
+      "category": "men's clothing",
+      "image": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
+      "rating": {
+        "rate": 4.7,
+        "count": 500
+      },
+      "productId": 3,
+      "userId": "4zqKo6N",
+      "count": 1,
+      "id": 11
+    },
+    {
+      "title": "Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket",
+      "price": 29.95,
+      "description": "100% POLYURETHANE(shell) 100% POLYESTER(lining) 75% POLYESTER 25% COTTON (SWEATER), Faux leather material for style and comfort / 2 pockets of front, 2-For-One Hooded denim style faux leather jacket, Button detail on waist / Detail stitching at sides, HAND WASH ONLY / DO NOT BLEACH / LINE DRY / DO NOT IRON",
+      "category": "women's clothing",
+      "image": "https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg",
+      "rating": {
+        "rate": 2.9,
+        "count": 340
+      },
+      "productId": 16,
+      "userId": "WJtwVv3",
+      "count": 1,
+      "id": 12
+    }
+  ]
+}
