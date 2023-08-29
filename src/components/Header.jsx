@@ -22,6 +22,7 @@ export default function Header() {
     async function fetchData() {
       await productCategories();
       await getDatas();
+      // sfhghfjgdgdfhj
     }
     fetchData();
   }, []);
