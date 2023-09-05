@@ -7,12 +7,13 @@ import { Status } from "../utils/Resource";
 import { Product } from "../models/Product";
 import { ProductUpdate } from "../models/ProductUpdate";
 import { IDetail } from "../inheritance/IDetail";
+import { ILocalStorage } from "../inheritance/ILocalStorage";
 
-class DetailController implements IDetail {
+class DetailController extends ILocalStorage implements IDetail {
   async addProduct(item: Product) {
     if (Utils.loginPopup()) {
       // const response = await ProductService.addToCard(item);
-      const user = LocalStorageService.getUser();
+      const user = this.getUser();
       // console.log(user.id);
       //   return;
       const response = await ProductService.productBasketControl(

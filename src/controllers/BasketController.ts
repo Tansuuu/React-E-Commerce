@@ -1,13 +1,14 @@
 import BasketHelper from "../helpers/BasketHelper";
 import { IBasket } from "../inheritance/IBasket";
+import { ILocalStorage } from "../inheritance/ILocalStorage";
 import { ProductUpdate } from "../models/ProductUpdate";
 import AuthService from "../services/AuthService";
 import LocalStorageService from "../services/LocalStorageService";
 import ProductService from "../services/ProductService";
 import { Resource, Status } from "../utils/Resource";
 
-class BasketController implements IBasket {
-  user = LocalStorageService.getUser();
+class BasketController extends ILocalStorage implements IBasket {
+  user = this.getUser();
   async basket(): Promise<Resource<ProductUpdate>> {
     // console.log(this.user?.id ?? 0);
     const response = await ProductService.getBasket(this.user?.id ?? 0);

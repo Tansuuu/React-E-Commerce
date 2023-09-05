@@ -1,8 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import ContactController from "../controllers/ContactController";
+import { Resource, Status } from "../utils/Resource";
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    subject: "",
+    email: "",
+    message: "",
+  });
+
+  const [responseData, setResponseData] = useState();
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    setResponseData(Resource.Loading());
+    const response = await ContactController.emailPost(formData);
+    setResponseData(response);
+    // console.log(response);
+    setFormData({ name: "", subject: "", email: "", message: "" });
+  }
+
+  function handleChange(e) {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+  }
+
   return (
     <div className="bg-blue">
       <div className="contact">
@@ -51,33 +75,54 @@ export default function Contact() {
               eleifend magna vehicula et. Nam mattis est sed tellus.
             </p>
           </div>
-          <div className="col-sm-6 d-flex flex-column bg-white p-4">
+          <form
+            className="col-sm-6 d-flex flex-column bg-white p-4"
+            onSubmit={(e) => handleSubmit(e)}
+          >
             <input
               className="mt-3 contact-input"
               type="text"
               placeholder="NAME"
+              onChange={(e) => handleChange(e)}
+              id="name"
+              value={formData.name}
             />
             <input
               className="mt-3 contact-input"
               type="text"
               placeholder="SUBJECT"
+              onChange={(e) => handleChange(e)}
+              id="subject"
+              value={formData.subject}
             />
             <input
               className="mt-3 contact-input"
               type="text"
               placeholder="EMAIL"
+              onChange={(e) => handleChange(e)}
+              id="email"
+              value={formData.email}
             />
             <textarea
               className="mt-3 contact-input"
               type="text"
               placeholder="MESSAGE"
               rows={6}
+              onChange={(e) => handleChange(e)}
+              id="message"
+              value={formData.message}
             />
-            <a href="mailto:email@example.com?subject='Hello from Abstract!'&body='Just popped in to say hello'">
+            {/* <a href="mailto:email@example.com?subject='Hello from Abstract!'&body='Just popped in to say hello'">
               Click to Send an Email
-            </a>
-            {/* <button className="mt-3 detail-btn">SEND MESSAGE</button> */}
-          </div>
+            </a> */}
+            <button className="mt-3 detail-btn" type="submit">
+              {responseData?.status === Status.LOADING ? (
+                <p>Loading...</p>
+              ) : (
+                <p>SEND MESSAGE</p>
+              )}
+            </button>
+          </form>
         </div>
       </div>
       <Footer />
