@@ -14,7 +14,7 @@ export default function Categories() {
   }, []);
 
   async function getDatas() {
-    const product = await ProductService.getProducts();
+    const product = (await ProductService.getProducts()).data;
     setData(product);
   }
 

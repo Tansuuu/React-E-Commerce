@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import LocalStorageService from "../services/LocalStorageService";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Login from "./Login";
-import UserPageRepository from "../controllers/UserPageRepository";
+import UserPageController from "../controllers/UserPageController";
 
 export default function UserPage() {
-  const user = UserPageRepository.getUser();
+  const user = UserPageController.getUser();
   const [money, setMoney] = useState("");
   const [total, setTotal] = useState(user?.money);
 
@@ -31,7 +31,7 @@ export default function UserPage() {
     console.log(updatedUser);
     // return;
     // console.log(updatedUser);
-    UserPageRepository.updateUser(updatedUser);
+    UserPageController.updateUser(updatedUser);
     setTotal(parseInt(user.money) + parseInt(money));
     setMoney("");
   }

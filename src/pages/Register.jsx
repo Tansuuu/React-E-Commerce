@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import RegisterRepository from "../controllers/RegisterRepository";
+import RegisterController from "../controllers/RegisterController";
 import SwalHelper from "../helpers/SwalHelper";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
@@ -16,7 +16,7 @@ export default function Register() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    const response = await RegisterRepository.register(formData);
+    const response = await RegisterController.register(formData);
     console.log(response);
     if (response === "Email already exists") {
       SwalHelper.cornerPopUp("warning", "Bu email kayıtlı");

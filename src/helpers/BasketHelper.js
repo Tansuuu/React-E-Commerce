@@ -1,18 +1,18 @@
 class BasketHelper {
   basket;
   getSize() {
-    if (this.basket == undefined) {
+    if (this.basket?.data == undefined) {
       return 0;
     } else {
-      return this.basket?.reduce((acc, obj) => acc + obj.count, 0) ?? 0;
+      return this.basket?.data.reduce((acc, obj) => acc + obj.count, 0) ?? 0;
       //   return this.basket.length;
     }
   }
 
   getCount() {
     return (
-      this.basket
-        ?.reduce((acc, obj) => acc + obj.price * obj.count, 0)
+      this.basket?.data
+        .reduce((acc, obj) => acc + obj.price * obj.count, 0)
         .toFixed(2) ?? 0.0
     );
   }
@@ -26,8 +26,7 @@ class BasketHelper {
   }
 
   addProductToBasket(item) {
-    this.basket.push(item);
-    // console.log(this.basket);
+    this.basket.data.push(item);
   }
 
   deleteFromBasket(id) {

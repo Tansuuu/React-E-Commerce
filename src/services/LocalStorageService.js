@@ -10,7 +10,7 @@ class LocalStorageService {
   getRegisterFromStorage(response) {
     localStorage.setItem(
       Constants.LocalStorageUserKey,
-      JSON.stringify(response)
+      JSON.stringify(response.data.user)
     );
   }
 

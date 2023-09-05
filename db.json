@@ -21,8 +21,8 @@
       "name": "deneme",
       "surname": "deneme",
       "id": "RpZfu5O",
-      "money": 5800386,
-      "password": "$2a$10$unSbgYHN5KEfa5TkjrQI/O8uPpCbK82cwZXxldRtmqyhDzbIJQiZu"
+      "money": 5798477,
+      "password": "$2a$10$/i0sJBv.JM8wwCCxCgRUyelW9pMUjPZtKSyh.byUf6ZGGBOj17uZu"
     },
     {
       "email": "cagla@hotmail.com",
@@ -39,14 +39,6 @@
       "surname": "tekin",
       "id": "i47pcJE",
       "money": 0
-    },
-    {
-      "email": "sertac@bcodeyazilim.com",
-      "name": "sertac",
-      "surname": "aköz",
-      "id": "WJtwVv3",
-      "money": 365,
-      "password": "$2a$10$bqbKZMFbNjoDrtCf4ZZnLedvSAACsSSmsa5G7A4O02mhNbh11tTmK"
     },
     {
       "email": "sertac3@bcodeyazilim.com",
@@ -111,6 +103,38 @@
       "surname": "teeekin",
       "money": 0,
       "id": "Hj5FDYE"
+    },
+    {
+      "email": "456@hotmail.com",
+      "name": "456",
+      "surname": "456",
+      "money": 0,
+      "id": "sboBdGi",
+      "password": "$2a$10$wWhJ765mCiyDNDVpVD1Wb.ZPKVHG1Jw2U7vJpz1W9BPgY2zNP6jIW"
+    },
+    {
+      "email": "sertac@bcodeyazilim.com",
+      "name": "sertaç",
+      "surname": "aköz",
+      "money": "27.11",
+      "id": "_Towo9T",
+      "password": "$2a$10$LU11ukzHfNQaLxLEKS288Obtmb0bI3ZW34VY4Bq8MdACNHGyov2dK"
+    },
+    {
+      "email": "ali@hotmail.com",
+      "password": "$2a$10$YtGJLugdFw.w7tdd1jxlneppbQvCgB9hZQAIv33puyI8tnp0mhURi",
+      "name": "ali",
+      "surname": "ali",
+      "money": 0,
+      "id": "IS3ccKT"
+    },
+    {
+      "email": "ayse@hotmail.com",
+      "name": "ayşe",
+      "surname": "ayşe",
+      "money": "145.50",
+      "id": "NaOhMQG",
+      "password": "$2a$10$f9vjC7tuXDzEbJcMtJj3weT5oAKIF5ruGtUmoR3EGHDIvDMfwo7Dq"
     }
   ],
   "productBaskets": [
@@ -130,7 +154,36 @@
       "id": 11
     },
     {
+      "title": "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
+      "productId": 10,
+      "price": 109,
+      "description": "Easy upgrade for faster boot up, shutdown, application load and response (As compared to 5400 RPM SATA 2.5” hard drive; Based on published specifications and internal benchmarking tests using PCMark vantage scores) Boosts burst write performance, making it ideal for typical PC workloads The perfect balance of performance and reliability Read/write speeds of up to 535MB/s/450MB/s (Based on internal testing; Performance may vary depending upon drive capacity, host device, OS and application.)",
+      "category": "electronics",
+      "image": "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_.jpg",
+      "rating": {
+        "rate": 2.9,
+        "count": 470
+      },
+      "count": 1,
+      "id": 17
+    },
+    {
+      "title": "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
+      "productId": 10,
+      "price": 109,
+      "description": "Easy upgrade for faster boot up, shutdown, application load and response (As compared to 5400 RPM SATA 2.5” hard drive; Based on published specifications and internal benchmarking tests using PCMark vantage scores) Boosts burst write performance, making it ideal for typical PC workloads The perfect balance of performance and reliability Read/write speeds of up to 535MB/s/450MB/s (Based on internal testing; Performance may vary depending upon drive capacity, host device, OS and application.)",
+      "category": "electronics",
+      "image": "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_.jpg",
+      "rating": {
+        "rate": 2.9,
+        "count": 470
+      },
+      "count": 1,
+      "id": 18
+    },
+    {
       "title": "Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket",
+      "productId": 16,
       "price": 29.95,
       "description": "100% POLYURETHANE(shell) 100% POLYESTER(lining) 75% POLYESTER 25% COTTON (SWEATER), Faux leather material for style and comfort / 2 pockets of front, 2-For-One Hooded denim style faux leather jacket, Button detail on waist / Detail stitching at sides, HAND WASH ONLY / DO NOT BLEACH / LINE DRY / DO NOT IRON",
       "category": "women's clothing",
@@ -139,10 +192,9 @@
         "rate": 2.9,
         "count": 340
       },
-      "productId": 16,
-      "userId": "WJtwVv3",
+      "userId": "_Towo9T",
       "count": 1,
-      "id": 12
+      "id": 19
     }
   ]
 }

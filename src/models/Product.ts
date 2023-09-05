@@ -8,5 +8,4 @@ export class Product{
     category: String;
     image: String;
     rating: Rating;
-
 }

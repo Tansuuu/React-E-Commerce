@@ -1,9 +1,10 @@
+import { ILogin } from "../inheritance/ILogin";
 import { AuthResponse } from "../models/AuthResponse";
 import AuthService from "../services/AuthService";
 import LocalStorageService from "../services/LocalStorageService";
 import { Resource, Status } from "../utils/Resource";
 
-class LoginController {
+class LoginController implements ILogin {
   login(formData): Promise<Resource<AuthResponse>> {
     return (
       new Promise<Resource<AuthResponse>>

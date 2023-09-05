@@ -3,10 +3,9 @@ import { IGlobal } from "../inheritance/IGlobal";
 import { Product } from "../models/Product";
 import ExampleService from "../services/ExampleService";
 
-class ExampleRepository extends IGlobal implements IExample{
+class ExampleController extends IGlobal implements IExample{
     getProducts(): Promise<Product[]> {
         return new Promise<Product[]>(async(resolve , reject) => {
-            
             try {
                 const response = await ExampleService.getProducts();
                 resolve(response);
@@ -17,4 +16,4 @@ class ExampleRepository extends IGlobal implements IExample{
     }
 
 }
-export default new ExampleRepository();
+export default new ExampleController();

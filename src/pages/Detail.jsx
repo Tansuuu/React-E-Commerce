@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import DetailRepository from "../controllers/DetailRepository";
+import DetailController from "../controllers/DetailController";
 
 export default function Detail() {
   const [, updateState] = React.useState();
@@ -12,7 +12,7 @@ export default function Detail() {
   const { from } = location.state;
 
   async function handleClick(item) {
-    await DetailRepository.addProduct(item);
+    await DetailController.addProduct(item);
     forceUpdate();
   }
 
@@ -32,13 +32,7 @@ export default function Detail() {
             <h5>{from.category}</h5>
             <h2 className="mt-3">{from.title}</h2>
             <h6 className="mt-3">$ {from.price}</h6>
-            <p className="mt-3">
-              Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non
-              mauris vitae erat consequat auctor eu in elit. Class aptent taciti
-              sociosqu ad litora torquent per conubia nostra, per inceptos
-              himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus
-              condimentum sit amet a augue. Sed non neque elit sed.
-            </p>
+            <p className="mt-4">{from.description}</p>
             <button
               onClick={() => handleClick(from)}
               className="detail-btn mt-5"

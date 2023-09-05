@@ -18,7 +18,7 @@ export default function About() {
           <div className="row">
             <div className="col-sm-6 p-5">
               <div className="about-line"></div>
-              <h2>Who We Are</h2>
+              <h2 className="mt-5">Who We Are</h2>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
                 tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Nam

@@ -4,7 +4,6 @@ import LoginController from "../controllers/LoginController";
 import SwalHelper from "../helpers/SwalHelper";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { Status } from "../utils/Resource";
 
 export default function Login() {
   const [formData, setFormData] = useState({

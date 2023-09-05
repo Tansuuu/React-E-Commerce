@@ -4,3 +4,4 @@ export class AuthResponse{
     accessToken : String;
     user: User;
 }
+

@@ -3,26 +3,32 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ProductService from "../services/ProductService";
 import { Link } from "react-router-dom";
-import ExampleRepository from "../controllers/ExampleRepository";
+import ExampleContoller from "../controllers/ExampleController";
+import { Status } from "../utils/Resource";
 
 export default function Home() {
   const [data, setData] = useState([]);
+  const [pageStatus, setPageStatus] = useState(true);
 
   useEffect(() => {
     getDatas();
-    ExampleRepository.getProducts()
+    ExampleContoller.getProducts()
       .then((data) => {})
       .catch((error) => {});
 
-      ExampleRepository.getGlobals();
+    ExampleContoller.getGlobals();
   }, []);
 
   async function getDatas() {
     const product = await ProductService.getProducts();
-    setData(product);
+    if (product.status == Status.SUCCESS) {
+      setData(product);
+    } else {
+      setPageStatus(false);
+    }
   }
 
-  return (
+  return pageStatus === true ? (
     <>
       <div className="home mb-5">
         <Header />
@@ -93,7 +99,7 @@ export default function Home() {
         <div className="d-flex flex-wrap gap-4 justify-content-center">
           {data.length === 0
             ? "loading..."
-            : data.map((item) => {
+            : data.data.map((item) => {
                 return (
                   <Link
                     to={`/detail/${item.id}`}
@@ -117,5 +123,9 @@ export default function Home() {
       </div>
       <Footer />
     </>
+  ) : (
+    <h1 className="d-flex align-items-center justify-content-center h-100">
+      ERROR
+    </h1>
   );
 }

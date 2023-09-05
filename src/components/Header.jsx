@@ -4,29 +4,30 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
 import ProductService from "../services/ProductService";
-import BasketRepository from "../controllers/BasketRepository";
+import BasketRepository from "../controllers/BasketController";
 import BasketHelper from "../helpers/BasketHelper";
 
 export default function Header() {
   const [category, setCategory] = useState();
-  const [basketSize, setBasketSize] = useState();
-  const [basketCount, setBAsketCount] = useState();
   const location = useLocation();
   const path = location?.state?.from;
+
+  var size = BasketHelper.getSize();
+  var count = BasketHelper.getCount();
 
   // useEffect(() => {
   //   productCategories();
   //   getDatas();
   // }, []);
   useEffect(() => {
-    async function fetchData() {
-      await productCategories();
-      await getDatas();
-      // abababa
-      // sfhghfjgddssddddddddddddd
-    }
     fetchData();
-  }, []);
+    getDatas();
+  }, [size, count]);
+
+  async function fetchData() {
+    await productCategories();
+    await getDatas();
+  }
 
   // useEffect(() => {
   //   // console.log("Basket Changed");
@@ -39,15 +40,13 @@ export default function Header() {
   // }, [basketSize]);
 
   async function productCategories() {
-    setCategory(await ProductService.getCategories());
+    setCategory((await ProductService.getCategories()).data);
   }
 
   async function getDatas() {
     await BasketRepository.basket();
-    setBasketSize(BasketHelper.getSize());
-    setBAsketCount(BasketHelper.getCount());
-    // setBasket(basket);
-    // console.log("get datas");
+    size = BasketHelper.getSize();
+    count = BasketHelper.getCount();
   }
 
   function reveal() {
@@ -123,7 +122,7 @@ export default function Header() {
             </NavLink>
             <div className="d-flex flex-row me-5 header-icon py-0">
               <NavLink to="/basket" className="nav-link text-white fw-bold">
-                $ {basketCount}
+                $ {count}
                 {/* {basket?.reduce((acc, obj) => acc + obj.price * obj.count, 0) ??
                   "0.00"} */}
               </NavLink>
@@ -133,7 +132,7 @@ export default function Header() {
               >
                 <FontAwesomeIcon icon={faBagShopping} />
                 <div className="amount">
-                  {basketSize}
+                  {size}
                   {/* {basket?.reduce((acc, obj) => acc + obj.count, 0) ?? 0} */}
                 </div>
               </NavLink>

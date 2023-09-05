@@ -3,28 +3,41 @@ import LocalStorageService from "../services/LocalStorageService";
 import ProductService from "../services/ProductService";
 import SwalHelper from "../helpers/SwalHelper";
 import BasketHelper from "../helpers/BasketHelper";
+import { Status } from "../utils/Resource";
+import { Product } from "../models/Product";
+import { ProductUpdate } from "../models/ProductUpdate";
+import { IDetail } from "../inheritance/IDetail";
 
-class DetailRepository {
-  async addProduct(item) {
+class DetailController implements IDetail {
+  async addProduct(item: Product) {
     if (Utils.loginPopup()) {
       // const response = await ProductService.addToCard(item);
       const user = LocalStorageService.getUser();
-      //   console.log(user.id);
+      // console.log(user.id);
       //   return;
       const response = await ProductService.productBasketControl(
         user.id,
         item.id
       );
-      if (response.length == 0) {
+      // console.log(response.data.length);
+      // response.data.
+
+      if (response.data?.length == 0) {
         // const product = {
         //     ...item,
         //     count: updateProductResponse[0].count + 1,
         //   };
         // console.log("Sepete Ekleyeceğim");
         SwalHelper.cornerPopUp("success", "Ürün Sepete Eklendi");
-        item.productId = item.id;
-        delete item.id;
-        await ProductService.addToCard(item);
+        var newItem: ProductUpdate = new ProductUpdate();
+        newItem = newItem.parseProduct(item);
+        // console.log(newItem);
+        // return;
+
+        // newItem.userId = user.id;
+        // item.productId = item.id;
+        // delete item.id;
+        await ProductService.addToCard(newItem);
         Utils.refreshPage();
       } else {
         // console.log("ELSE");
@@ -34,10 +47,19 @@ class DetailRepository {
           user.id,
           item.id
         );
-        const updatedProduct = {
-          ...updateProductResponse[0],
-          count: updateProductResponse[0].count + 1,
-        };
+
+        if (updateProductResponse.status == Status.SUCCESS) {
+          const updatedProduct = {
+            ...updateProductResponse.data![0],
+            count: updateProductResponse.data![0].count + 1,
+          };
+          await ProductService.updateProductBasket(updatedProduct);
+          BasketHelper.addProductToBasket({
+            ...updatedProduct,
+            count: 1,
+          });
+        }
+
         // console.log("response product");
         // console.log(updateProductResponse);
         // console.log("my json");
@@ -45,11 +67,6 @@ class DetailRepository {
         // console.log("güncellencek basket product id ");
         // console.log(updatedProduct.id);
         // return;
-        await ProductService.updateProductBasket(updatedProduct);
-        BasketHelper.addProductToBasket({
-          ...updatedProduct,
-          count: 1,
-        });
       }
 
       SwalHelper.cornerPopUp("success", "Ürün Sepete Eklendi");
@@ -57,4 +74,4 @@ class DetailRepository {
   }
 }
 
-export default new DetailRepository();
+export default new DetailController();
