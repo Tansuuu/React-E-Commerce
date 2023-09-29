@@ -4,9 +4,7 @@
 
 ## Screenshot
 
-<!-- ![moviewebsite](./public/movie.png)
-![moviewebsite](./public/movie2.png)
-![moviewebsite](./public/movie3.png) -->
+![e-commerce](./public/images/home.png)
 
 ## Kullanılan Teknolojiler
 
@@ -17,12 +15,12 @@
 + Json Server
 + JavaScript
 + TypeScript
++ Axios
 
 ## Kurulum
 
 + npm install 
-+ json-server --watch db.json --port 3030
-+ json-server --watch author.json -m ./node_modules/json-server-auth
++ json-server --watch db.json -m ./node_modules/json-server-auth
 + npm run dev
 
 ### React + Vite
