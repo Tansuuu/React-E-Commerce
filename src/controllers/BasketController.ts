@@ -3,7 +3,6 @@ import { IBasket } from "../inheritance/IBasket";
 import { ILocalStorage } from "../inheritance/ILocalStorage";
 import { ProductUpdate } from "../models/ProductUpdate";
 import AuthService from "../services/AuthService";
-import LocalStorageService from "../services/LocalStorageService";
 import ProductService from "../services/ProductService";
 import { Resource, Status } from "../utils/Resource";
 
